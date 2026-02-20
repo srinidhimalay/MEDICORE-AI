@@ -1,7 +1,9 @@
 import axios from "axios";
 
-// IMPORTANT: Make sure this matches your backend URL
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+// IMPORTANT: Make sure this matches your backend URL.
+// Normalize to avoid accidental double slashes like //api/chat/stream.
+const RAW_API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API_BASE_URL = RAW_API_BASE_URL.replace(/\/+$/, "");
 
 console.log("🔧 API Base URL:", API_BASE_URL);
 
