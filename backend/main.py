@@ -53,17 +53,24 @@ async def lifespan(app: FastAPI):
         logger.info("⚠️ Server starting WITHOUT database connection")
         logger.info("Please check your MONGODB_URI in .env file")
     
-    try:
-        # Initialize vector store
-        retriever_service.initialize()
-        logger.info("✓ Vector store initialized successfully")
+    warmup_models = os.getenv("WARMUP_MODELS_ON_STARTUP", "false").strip().lower() in {
+        "1", "true", "yes", "on"
+    }
 
-        # Initialize hybrid retriever (BM25 + reranker)
-        hybrid_retriever_service.initialize()
-        logger.info("✓ Hybrid retriever initialized successfully")
-    except Exception as e:
-        logger.error(f"⚠️ Vector store initialization warning: {e}")
-        logger.info("Server will continue, but RAG features may not work")
+    if warmup_models:
+        try:
+            # Initialize vector store
+            retriever_service.initialize()
+            logger.info("✓ Vector store initialized successfully")
+
+            # Initialize hybrid retriever (BM25 + reranker)
+            hybrid_retriever_service.initialize()
+            logger.info("✓ Hybrid retriever initialized successfully")
+        except Exception as e:
+            logger.error(f"⚠️ Vector store initialization warning: {e}")
+            logger.info("Server will continue, but RAG features may not work")
+    else:
+        logger.info("Skipping model warm-up at startup (WARMUP_MODELS_ON_STARTUP=false)")
     
     yield
     
