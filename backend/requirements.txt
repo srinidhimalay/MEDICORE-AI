@@ -53,6 +53,7 @@ email-validator==2.1.0
 # ================================
 # HTTP client
 # ================================
+httpx==0.27.2                        # Compatibility pin for groq==0.4.2 (avoid proxies arg crash)
 aiohttp==3.13.3                      # Async HTTP for live context (PubMed/RxNorm/OpenFDA)
 beautifulsoup4==4.14.3               # HTML scraping for web source ingestion (WHO/CDC)
 lxml==6.0.2                          # XML/HTML parser backend for BeautifulSoup
