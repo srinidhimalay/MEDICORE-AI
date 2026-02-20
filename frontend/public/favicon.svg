@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Central staff -->
+  <line x1="32" y1="10" x2="32" y2="54" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Left snake curves -->
+  <path d="M32 18 C20 20 20 28 32 30" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M32 30 C20 32 20 40 32 42" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Right snake curves -->
+  <path d="M32 18 C44 20 44 28 32 30" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M32 30 C44 32 44 40 32 42" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Left wing -->
+  <path d="M32 13 C26 10 18 12 16 16 C20 14 26 15 32 18" fill="white" opacity="0.9"/>
+  <!-- Right wing -->
+  <path d="M32 13 C38 10 46 12 48 16 C44 14 38 15 32 18" fill="white" opacity="0.9"/>
+
+  <!-- Top orb -->
+  <circle cx="32" cy="11" r="3" fill="white"/>
+</svg>

@@ -1,0 +1,91 @@
+# ================================
+# FastAPI and server
+# ================================
+fastapi==0.110.0
+uvicorn[standard]==0.27.1
+python-multipart==0.0.9
+
+# ================================
+# LangChain ecosystem (Python 3.10)
+# ================================
+langchain==0.1.20
+langchain-core==0.1.52
+langchain-community==0.0.38
+langchain-text-splitters==0.0.1
+langchain-huggingface==0.0.3
+langchain-pinecone==0.1.1
+
+# ================================
+# Vector database
+# ================================
+pinecone-client==3.2.2
+
+# ================================
+# Embeddings / ML stack
+# ================================
+torch==2.2.2
+transformers==4.41.2
+tokenizers==0.19.1
+sentence-transformers==2.6.1
+
+# ================================
+# PDF processing (text only)
+# ================================
+PyMuPDF==1.24.1
+
+# ================================
+# LLM - Groq
+# ================================
+groq==0.4.2
+
+# ================================
+# Environment variables
+# ================================
+python-dotenv==1.0.1
+
+# ================================
+# Data validation
+# ================================
+pydantic==2.6.3
+pydantic-settings==2.2.1
+email-validator==2.1.0
+
+# ================================
+# HTTP client
+# ================================
+aiohttp==3.13.3                      # Async HTTP for live context (PubMed/RxNorm/OpenFDA)
+beautifulsoup4==4.14.3               # HTML scraping for web source ingestion (WHO/CDC)
+lxml==6.0.2                          # XML/HTML parser backend for BeautifulSoup
+
+# ================================
+# Rate limiting
+# ================================
+slowapi==0.1.9
+
+# ================================
+# Hybrid search
+# ================================
+rank-bm25==0.2.2
+
+# ================================
+# Utilities
+# ================================
+numpy==1.26.4
+
+# ================================
+# Database and Authentication
+# ================================
+motor==3.3.2                         # Async MongoDB driver
+pymongo==4.6.1                       # MongoDB sync driver (dependency)
+certifi                              # CA bundle for MongoDB Atlas SSL/TLS (database.py)
+passlib[bcrypt]==1.7.4               # Password hashing
+bcrypt==4.1.2                        # Bcrypt for passlib
+python-jose[cryptography]==3.3.0    # JWT token generation
+cryptography==42.0.5                 # Cryptography for jose
+
+# ================================
+# Testing
+# ================================
+requests==2.31.0                     # For API testing
+pytest==8.0.0                        # Optional: for unit tests
+pytest-asyncio==0.23.5               # Optional: for async tests

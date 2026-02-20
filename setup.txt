@@ -1,0 +1,29 @@
+download
+python 3.10.11(add path)
+
+
+Create your project env
+py -3.10 -m venv env
+env\Scripts\activate
+python -V
+
+pip install --upgrade pip
+pip install -r requirements.txt
+
+create backend files
+run python main.py
+run test_api.py
+
+create frontend files
+# Initialize npm project
+npm init -y
+
+# Install dependencies
+npm install react react-dom axios react-markdown
+
+# Install dev dependencies
+npm install -D vite @vitejs/plugin-react
+
+HOW TO RUN -
+cd backend, python main.py
+cd frontend, npm run dev
